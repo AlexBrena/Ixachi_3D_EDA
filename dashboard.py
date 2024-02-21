@@ -251,7 +251,7 @@ fig_km2.update_layout(
 total_proyectado = df['Prom_ProyectadoXDia_Permisos'].sum()
 total_real = df['PermisosDia_Real'].sum()
 deficit = df['PermisosDia_Real_Sumatoria'].last_valid_index()
-deficit_perm = df.at[deficit, 'PermisosDia_Real_Sumatoria']
+deficit_perm = df.at[deficit, 'Desempeno_Proyectado_Permisos_Sumatoria']
 
 #%
 deficit_pctj_perm = (deficit_perm / total_proyectado) * 100
