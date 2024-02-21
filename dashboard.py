@@ -251,9 +251,10 @@ fig_km2.update_layout(
 total_proyectado = df['Prom_ProyectadoXDia_Permisos'].sum()
 total_real = df['PermisosDia_Real'].sum()
 deficit = df['PermisosDia_Real_Sumatoria'].last_valid_index()
+deficit_perm = df.at[deficit, 'PermisosDia_Real_Sumatoria']
 
 #%
-deficit_pctj_perm = (deficit / total_proyectado) * 100
+deficit_pctj_perm = (deficit_perm / total_proyectado) * 100
 
 # Usar el índice para obtener el último valor no NaN de esas columnas
 msj_deficit = df.at[deficit, 'Deficit_Permisos']
