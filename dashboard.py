@@ -208,10 +208,20 @@ fig_km2.add_vline(x=id_perforacion, line_width=2, line_dash="dash", line_color="
                   annotation_text="Inicia Perforación<br>(fecha límite)",
                   annotation_position="top left")
 
+fig_permisos.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="blue",
+                        annotation_text="Avance actual<br>",
+                        annotation_position="top left")
+
+fig_km2.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="blue",
+                        annotation_text="Avance actual<br>",
+                        annotation_position="top left")
+
+
 ######################################################################## Layout Gráficos ########################################################################
 fig_permisos.update_layout(
     margin=dict(l=20, r=20, t=20, b=20),  # Ajusta los valores según necesites para los márgenes
     yaxis_title='Desempeño en Permisos',  # Actualiza el título del eje Y
+    xaxis_tickangle=45, xaxis_title='Fecha',
     legend=dict(
         yanchor="top",
         y=-0.3,  # Ajusta esto para separar la leyenda del gráfico
@@ -224,6 +234,7 @@ fig_permisos.update_layout(
 fig_km2.update_layout(
     margin=dict(l=20, r=20, t=20, b=20),  # Ajusta los valores según necesites para los márgenes
     yaxis_title='Desempeño en Km2',  # Actualiza el título del eje Y
+    xaxis_tickangle=45, xaxis_title='Fecha',
     legend=dict(
         yanchor="top",
         y=-0.3,  # Ajusta esto para separar la leyenda del gráfico
@@ -341,6 +352,10 @@ fig_bar.add_vline(x=id_topografia, line_width=2, line_dash="dash", line_color="g
 fig_bar.add_vline(x=id_perforacion, line_width=2, line_dash="dash", line_color="red",
                        annotation_text="Inicia Perforación<br>(fecha límite)",
                        annotation_position="top left")
+
+fig_bar.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="blue",
+                        annotation_text="Avance actual<br>",
+                        annotation_position="top left")
 
 
 
@@ -476,6 +491,7 @@ fig_permisos2.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="bl
 fig_permisos2.update_layout(title='Permisos Real vs Proyectado [No. Permisos]',
     margin=dict(l=20, r=20, t=20, b=20),
     yaxis_title='Desempeño en Permisos',
+    xaxis_tickangle=45, xaxis_title='Fecha',
     legend=dict(
         yanchor="top",
         y=-0.3,
@@ -537,6 +553,7 @@ fig_km2_2.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="blue",
 fig_km2_2.update_layout(title='Permisos Real vs Proyectado [Km2]',
     margin=dict(l=20, r=20, t=20, b=20),
     yaxis_title='Desempeño en Km2',
+    xaxis_tickangle=45, xaxis_title='Fecha',
     legend=dict(
         yanchor="top",
         y=-0.3,
