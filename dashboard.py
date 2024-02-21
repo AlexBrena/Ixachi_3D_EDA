@@ -143,7 +143,7 @@ df['Predicted_Desempeno_Real_Km2_Sumatoria'] = model.predict(X_full_Km2)
 # Crear un gráfico de dispersión con una línea de tendencia (regresión lineal)
 
 fig_permisos = go.Figure()
-fig_permisos.add_trace(go.Scatter(x=df['ID'], y=df['PermisosDia_Real_Sumatoria'], mode='markers', name='Desempeño Real',
+fig_permisos.add_trace(go.Scatter(x=df['Fecha'], y=df['PermisosDia_Real_Sumatoria'], mode='markers', name='Desempeño Real',
                          marker=dict(color='green')))
 
 # Modificar todas las trazas actuales para cambiarlas a líneas
@@ -151,13 +151,13 @@ fig_permisos.update_traces(mode='markers')
 
 # Añadir la curva de Desempeño Proyectado
 fig_permisos.add_trace(
-    go.Scatter(x=df['ID'], y=df['Desempeno_Proyectado_Permisos_Sumatoria'],
+    go.Scatter(x=df['Fecha'], y=df['Desempeno_Proyectado_Permisos_Sumatoria'],
                 mode='lines', name='Desempeño Proyectado', line=dict(color='LightSkyBlue') ))
 
 #Curva de Desempeño real REGRESION
 fig_permisos.add_trace(
     go.Scatter(
-        x=df['ID'], 
+        x=df['Fecha'], 
         y=df['Predicted_PermisosDia_Real_Sumatoria'],
         mode='lines',
         name='Desmpeño Real Proyectado',
@@ -169,7 +169,7 @@ fig_permisos.add_trace(
 # Crear un gráfico de dispersión con una línea de tendencia (regresión lineal)
 
 fig_km2 = go.Figure()
-fig_km2.add_trace(go.Scatter(x=df['ID'], y=df['Desempeno_Real_Km2_Sumatoria'], mode='markers', name='Desempeño Real',
+fig_km2.add_trace(go.Scatter(x=df['Fecha'], y=df['Desempeno_Real_Km2_Sumatoria'], mode='markers', name='Desempeño Real',
                          marker=dict(color='green')))
 
 # Modificar todas las trazas actuales para cambiarlas a líneas
@@ -177,13 +177,13 @@ fig_km2.update_traces(mode='markers')
 
 # Añadir la curva de Desempeño Proyectado
 fig_km2.add_trace(
-    go.Scatter(x=df['ID'], y=df['Desempeno_Proyectado_Km2_Sumatoria'],
+    go.Scatter(x=df['Fecha'], y=df['Desempeno_Proyectado_Km2_Sumatoria'],
                 mode='lines', name='Desempeño Proyectado', line=dict(color='LightSkyBlue')))
 
 #Curva de Desempeño real REGRESION
 fig_km2.add_trace(
     go.Scatter(
-        x=df['ID'], 
+        x=df['Fecha'], 
         y=df['Predicted_Desempeno_Real_Km2_Sumatoria'],
         mode='lines',
         name='Desmpeño Real Proyectado',
