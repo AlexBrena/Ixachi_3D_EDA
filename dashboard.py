@@ -529,7 +529,7 @@ fig_km2_2.add_vline(x=id_topografia, line_width=2, line_dash="dash", line_color=
 fig_km2_2.add_vline(x=id_perforacion, line_width=2, line_dash="dash", line_color="red",
                         annotation_text="Inicia Perforación<br>(fecha límite)",
                         annotation_position="top left")
-fig_km2.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="blue",
+fig_km2_2.add_vline(x=id_hoy, line_width=2, line_dash="dash", line_color="blue",
                         annotation_text="Avance actual<br>",
                         annotation_position="top left")
 
