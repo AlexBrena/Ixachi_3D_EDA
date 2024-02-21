@@ -439,7 +439,7 @@ fig_permisos2.add_trace(go.Scatter(
     x=df['Fecha'],
     y=df['PermisosDia_Real_Sumatoria'],
     mode='markers',  # Cambio aquí: originalmente tenías 'lines', pero para comenzar con 'markers' es más intuitivo
-    name='Desempeño Real',
+    name='Desempeño Real Proyectado',
     marker=dict(color='green')
 ))
 
@@ -500,7 +500,7 @@ fig_km2_2.add_trace(go.Scatter(
     x=df['Fecha'],
     y=df['Desempeno_Real_Km2_Sumatoria'],
     mode='markers',  # Cambio aquí: originalmente tenías 'lines', pero para comenzar con 'markers' es más intuitivo
-    name='Desempeño Real',
+    name='Desempeño Real Proyectado',
     marker=dict(color='green')
 ))
 
