@@ -252,6 +252,9 @@ total_proyectado = df['Prom_ProyectadoXDia_Permisos'].sum()
 total_real = df['PermisosDia_Real'].sum()
 deficit = df['PermisosDia_Real_Sumatoria'].last_valid_index()
 
+#%
+deficit_pctj_perm = (deficit / total_proyectado) * 100
+
 # Usar el índice para obtener el último valor no NaN de esas columnas
 msj_deficit = df.at[deficit, 'Deficit_Permisos']
 
@@ -289,6 +292,8 @@ fig_pie_perm.update_layout(
 total_proyectado_km2 = df['Prom_ProyectadoXDia_Km2'].sum()
 total_real_km2 = df['Km2_Diarios'].sum()
 deficit_km2 = df['PermisosDia_Real_Sumatoria'].last_valid_index()
+
+deficit_pctj_km2 = (deficit_km2 / total_proyectado_km2) * 100
 
 # Usar el índice para obtener el último valor no NaN de esas columnas
 msj_deficit_km2 = df.at[deficit_km2, 'Deficit_Km2_DelTotal']
@@ -592,7 +597,7 @@ with col2_Permisos:
     st.plotly_chart(fig_pie_perm, use_container_width=True)
 
 # Mensaje que deseas mostrar, incluyendo la variable
-mensaje = f"Déficit de Permisos: {msj_deficit}"
+mensaje = f"Déficit de Permisos: {msj_deficit}, [{deficit_pctj_perm}%]"
 
 # Usando HTML para centrar el mensaje
 st.markdown(f"<h3 style='text-align: right; font-size: 16px;'>{mensaje}</h3>", unsafe_allow_html=True)
